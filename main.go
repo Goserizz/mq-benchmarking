@@ -19,10 +19,6 @@ func newTester(subject string, testLatency bool, msgCount, msgSize int) *benchma
 		inproc := mq.NewInproc(msgCount, testLatency)
 		messageSender = inproc
 		messageReceiver = inproc
-	case "zeromq":
-		zeromq := mq.NewZeromq(msgCount, testLatency)
-		messageSender = zeromq
-		messageReceiver = zeromq
 	case "kafka":
 		kafka := mq.NewKafka(msgCount, testLatency)
 		messageSender = kafka
@@ -120,7 +116,6 @@ func main() {
 		"usage: %s "+
 			"{"+
 			"inproc|"+
-			"zeromq|"+
 			"kafka|"+
 			"rabbitmq|"+
 			"nsq|"+
