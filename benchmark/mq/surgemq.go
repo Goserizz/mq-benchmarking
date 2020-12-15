@@ -4,7 +4,7 @@ import (
 	"github.com/surge/surgemq/service"
 
 	"github.com/surgemq/message"
-	"github.com/tylertreat/mq-benchmarking/benchmark"
+	"github.com/Goserizz/mq-benchmarking/benchmark"
 )
 
 type SurgeMQ struct {
