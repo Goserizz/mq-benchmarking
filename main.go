@@ -23,10 +23,6 @@ func newTester(subject string, testLatency bool, msgCount, msgSize int) *benchma
 		zeromq := mq.NewZeromq(msgCount, testLatency)
 		messageSender = zeromq
 		messageReceiver = zeromq
-	case "nanomsg":
-		nanomsg := mq.NewNanomsg(msgCount, testLatency)
-		messageSender = nanomsg
-		messageReceiver = nanomsg
 	case "kafka":
 		kafka := mq.NewKafka(msgCount, testLatency)
 		messageSender = kafka
@@ -125,7 +121,6 @@ func main() {
 			"{"+
 			"inproc|"+
 			"zeromq|"+
-			"nanomsg|"+
 			"kafka|"+
 			"rabbitmq|"+
 			"nsq|"+
